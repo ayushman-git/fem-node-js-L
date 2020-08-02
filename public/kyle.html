@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Main</title>
+    <title>Kyle's Course</title>
+    <link rel="stylesheet" href="./public/styles.css">
   </head>
   <body>
-    <h1>NodeJs</h1>
+    <h1>Getting started with JS</h1>
     <ul>
       <li>
         The '+' operater can be defined as overlaoded because it can perform two
@@ -30,6 +31,10 @@
       <li><strong>Implicit coercion</strong> means converting one data type into another but doing while making a copy and not changing the actual value in the variable.</li>
       <li><strong>Falsey</strong> value the outputs which will be turned into false after coercing it to a boolean value</li>
       <li><strong>Function expressions means assigning a funcition to a variable which may be then passed as argument in another funciton.</strong></li>
+      <li><strong>IIFE</strong> - Immediately Invoked Function Expression, they can be used to create new variable with same name as a global variable and not changing its name. They are also executed as soon as they are declared.</li>
+      <li><strong>Explicit let blocks</strong> - these are blocks which can be created anywhere to create a let variable only for that block.</li>
+      <li>Prototypes are the mechanism by which JavaScript objects inherit features from one another.</li>
+      <li><strong>Class</strong> - Class can be used to create several instance of a prticular group of data.</li>
     </ul>
 
     <hr>
@@ -52,6 +57,12 @@
         <td>Eg let a = 3; a = 3 * op;</td>
       </tr>
     </table>
-    <script src="./public/app.js"></script>
+
+    <hr>
+    <h3>Closures</h3>
+    <blockquote>A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function’s scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
+    <br><cite>-- MDN</cite>
+    </blockquote>
+    <script src="./public/kyle.js"></script>
   </body>
 </html>
