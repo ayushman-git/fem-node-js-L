@@ -54,6 +54,10 @@ Object.freeze(anotherArray);
 //In arrays order is important, so a will be assigned 10, b will be assigned 23 and so on.
 const someArray = ["desX", "desY", "desZ"];
 let [a,b,c,s,d] = [10,23,12,42];
+console.log(a,b);
+//Swapping values with destructuring
+[a,b] = [b,a];
+console.log(a,b)
 let [x,y,z] = someArray;
 let [po, , iu] = someArray; //We are leaving one sp
 console.log(po, iu)
@@ -98,3 +102,45 @@ let { tags, latitude: lat, longitude: long } = randomObj;
 let { _id: id, ...everythingElse} = randomObj;
 console.log(lat, long, tags)
 console.log(id, everythingElse)
+
+//Loopping Arrays
+function loopingThroughArraysInObj() {
+  randomObj.tags.forEach((iteration) => {
+    console.log(iteration)
+  })
+}
+loopingThroughArraysInObj();
+
+//Looping Objects
+function loopingThroughObj() {
+  for (keys in randomObj) {
+    console.log(randomObj[keys]);
+  }
+}
+loopingThroughObj();
+
+//
+const lol = {
+  'suspects': [
+    {
+      name: "A",
+      color: "red color"
+    },
+    {
+      name: "B",
+      color: "green color"
+    }
+  ]
+}
+
+let [{ color: red}, { color: green}] = lol.suspects;
+console.log(red, green);
+
+function loopingExample() {
+  for (let i = 0; i < lol.suspects.length; i++) {
+    for (let keys in lol.suspects[i]) {
+      console.log(keys);  
+    }
+  }
+}
+loopingExample();
