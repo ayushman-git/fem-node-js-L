@@ -1,7 +1,11 @@
 //In object we store valeus as reference. Non-primited (objects) are stored as reference.
 let anObj= {
-  name: "Ayushman"
+  name: "Ayushman",
+  age: 22
 }
+Object.keys(anObj).forEach ((name) => {
+  console.log(name);
+})
 //Here it will be stored as a value. Primitive values are stored as value.
 let sameName = anObj.name;
 anObj.name = "Aman";
@@ -144,3 +148,28 @@ function loopingExample() {
   }
 }
 loopingExample();
+
+function objInFunction(giveMeName) {
+  return {
+    someName: giveMeName,
+    length: giveMeName.length,
+    funcInObj() {
+      console.log("Hello " + giveMeName);
+    }
+  }
+}
+
+let againAnArray = ["Ayushman", "Farket", "Suzy"];
+let againArray = [];
+
+againArray.forEach()
+
+//Using forEach to populate variable from a function which is returning object.
+// againAnArray.forEach((name) => {
+//   againArray.push(objInFunction(name));
+// })
+
+// for (let i = 0; i < againAnArray.length; i++) {
+//   againArray[i] = objInFunction(againAnArray[i]);
+// }
+console.log(againArray);
