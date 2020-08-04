@@ -45,7 +45,62 @@
         because of sequeantial indices. So we can use multiple built in
         properties and functions.
       </li>
-      <li>With the help of <strong>destructuring</strong>, we can assign values to new variables from a source (obj, array etc) in a single line.</li>
+
+      <li>
+        With the help of <strong>destructuring</strong>, we can assign values to
+        new variables from a source (obj, array etc) in a single line.
+      </li>
+      <li>
+        <strong>forEach</strong> iterates through each element but don't return
+        anything. On the other hand <strong>map</strong> iterates as well as
+        return a new array.
+      </li>
+    </ul>
+    <hr />
+    <h3>Arrow Function</h3>
+    <ul>
+      <li>
+        <b
+          >The main difference between arrow and normal function is of 'this'
+          meaning</b
+        >
+      </li>
+      <li>
+        In a normal function every function have their own this reference.
+      </li>
+      <li>
+        But arrow functions don't have their own this reference. So they can be
+        used to refer to the parent function.
+      </li>
+      <li>
+        Projection means taking data from one data structure and converting it
+        into another one.
+      </li>
+      <h4>Normal Function</h4>
+      <pre><code>
+        function Person() {
+          var that = this;
+          that.age = 0;
+        
+          setInterval(function growUp() {
+            // The callback refers to the `that` variable of which
+            // the value is the expected object.
+            that.age++;
+          }, 1000);
+        }
+        </code></pre>
+      <h4>Arrow Function</h4>
+      <pre><code>
+        function Person(){
+          this.age = 0;
+        
+          setInterval(() => {
+            this.age++; // |this| properly refers to the Person object
+          }, 1000);
+        }
+        
+        var p = new Person();
+      </code></pre>
     </ul>
     <script src="./public/bianca.js"></script>
   </body>

@@ -149,6 +149,7 @@ function loopingExample() {
 }
 loopingExample();
 
+//Using forEach
 function objInFunction(giveMeName) {
   return {
     someName: giveMeName,
@@ -158,12 +159,8 @@ function objInFunction(giveMeName) {
     }
   }
 }
-
 let againAnArray = ["Ayushman", "Farket", "Suzy"];
 let againArray = [];
-
-againArray.forEach()
-
 //Using forEach to populate variable from a function which is returning object.
 // againAnArray.forEach((name) => {
 //   againArray.push(objInFunction(name));
@@ -172,4 +169,108 @@ againArray.forEach()
 // for (let i = 0; i < againAnArray.length; i++) {
 //   againArray[i] = objInFunction(againAnArray[i]);
 // }
+//Using array to do the same thing
+againArray = againAnArray.map((name) => {
+  return name;
+})
 console.log(againArray);
+
+let someThing = [2,3,1,2,3];
+//Map iterated through each element and return an array with the output. forEach don't return anuthing.
+let mapVar = someThing.map(num => {
+  return "The number is " + num
+})
+console.log(mapVar)
+
+//filter
+//creates a new array with values that passes the function test
+let lessThan = someThing.filter((num) => {
+  return num <= 2;
+})
+console.log(lessThan)
+
+//Projection Exercise
+const videoData = [
+  {
+      name: 'Miss Scarlet',
+      present: true,
+      rooms: [
+          {kitchen: false},
+          {ballroom: false},
+          {conservatory: false},
+          {'dining room': false},
+          {'billiard room': false},
+          {library: false}
+      ]
+  },
+  {
+      name: 'Mrs. White',
+      present: false,
+      rooms: [
+          {kitchen: false},
+          {ballroom: false},
+          {conservatory: false},
+          {'dining room': false},
+          {'billiard room': false},
+          {library: false}
+      ]
+  },
+  {
+      name: 'Reverend Green',
+      present: true,
+      rooms: [
+          {kitchen: false},
+          {ballroom: false},
+          {conservatory: false},
+          {'dining room': false},
+          {'billiard room': false},
+          {library: false}
+      ]
+  },
+  {
+      name: 'Rusty',
+      present: false,
+      rooms: [
+          {kitchen: false},
+          {ballroom: false},
+          {conservatory: false},
+          {'dining room': false},
+          {'billiard room': false},
+          {library: false}
+      ]
+  },
+  {
+      name: 'Colonel Mustard',
+      present: true,
+      rooms: [
+          {kitchen: false},
+          {ballroom: false},
+          {conservatory: false},
+          {'dining room': false},
+          {'billiard room': false},
+          {library: false}
+      ]
+  },
+  {
+      name: 'Professor Plum',
+      present: true,
+      rooms: [
+          {kitchen: false},
+          {ballroom: false},
+          {conservatory: false},
+          {'dining room': false},
+          {'billiard room': false},
+          {library: false}
+      ]
+  }
+];
+
+let someData = videoData.filter(function(name) {
+  return name.present;
+})
+let onlyNames = [];
+for (let i in someData) {
+  onlyNames.push(someData[i].name)
+}
+
+console.log(onlyNames);
