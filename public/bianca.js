@@ -281,7 +281,7 @@ console.log(onlyNames);
 
 //Arguments function
 function argumentsCheck(a, b, ...c) {
-  debugger;
+  // debugger; //Used to add debugger
   //arguments keyword shows all the arguments passed while invoking a functions;
   const arr = Array.from(arguments); //It will convert an array like object into actual array.
   //arguments by default is an array like object. So we can't use array functions like push, join etc.
@@ -307,3 +307,19 @@ console.log(defaultParams("Hi ", "XenOn"));
 
 //we can also use this to set default value to a variable;
 // let abb = abb || 3; //So if b will have any value it will stay the same if its empty then its value will be 3.
+
+//New instance of function is created everytime a function is invoked.
+let globalFunc;
+let globalValue = 20;
+const someFunc = () => {
+  let globalCounter = 10;
+  globalCounter++;
+  console.log(globalCounter);
+  const innerFunc = () => {
+    globalValue = globalCounter;
+  }
+}
+someFunc();
+someFunc(); 
+
+console.log(someFunc.innerFunc());
