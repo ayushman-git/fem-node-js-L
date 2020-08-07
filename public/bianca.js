@@ -308,18 +308,98 @@ console.log(defaultParams("Hi ", "XenOn"));
 //we can also use this to set default value to a variable;
 // let abb = abb || 3; //So if b will have any value it will stay the same if its empty then its value will be 3.
 
-//New instance of function is created everytime a function is invoked.
-let globalFunc;
-let globalValue = 20;
-const someFunc = () => {
-  let globalCounter = 10;
-  globalCounter++;
-  console.log(globalCounter);
-  const innerFunc = () => {
-    globalValue = globalCounter;
+//callback functions
+const callbackFunc = (condition, isTrue, isFalse) => {
+  return condition ? isTrue() : isFalse();
+};
+callbackFunc(
+  true,
+  () => {
+    console.log(true);
+  },
+  () => {
+    console.log(false);
   }
-}
-someFunc();
-someFunc(); 
+);
 
-console.log(someFunc.innerFunc());
+//callback practice
+const increment = n => n + 1;
+const decrement = n => n - 1;
+const square = n => n * n;
+
+const allCalc = (n, calcType) => {
+  return calcType(n);
+}
+
+console.log(allCalc(23, increment));
+console.log(allCalc(23, decrement));
+console.log(allCalc(23, square));
+
+//Reduce - reduce the array and return a single value.
+//syntax - arr.reduce(callback( accumulator, currentValue[, index[, array]] )[, initialValue])
+let thisArray = [2,5,23,12,34];
+const reducerFunc = (accumulator, currentValue) => accumulator + currentValue;
+
+const output = thisArray.reduce(reducerFunc, 100); //100 is the initial value in accumulator.
+console.log(output);
+
+//Practice
+const newDevelopment = [
+  {
+      name: 'Miss Scarlet',
+      present: true,
+      rooms: [
+          {kitchen: false},
+          {ballroom: false},
+          {conservatory: true},
+          {'dining room': true},
+          {'billiard room': false},
+          {library: true}
+      ]
+  },
+  {
+      name: 'Reverend Green',
+      present: true,
+      rooms: [
+          {kitchen: true},
+          {ballroom: false},
+          {conservatory: false},
+          {'dining room': false},
+          {'billiard room': true},
+          {library: false}
+      ]
+  },
+  {
+      name: 'Colonel Mustard',
+      present: true,
+      rooms: [
+          {kitchen: false},
+          {ballroom: false},
+          {conservatory: true},
+          {'dining room': false},
+          {'billiard room': true},
+          {library: false}
+      ]
+  },
+  {
+      name: 'Professor Plum',
+      present: true,
+      rooms: [
+          {kitchen: true},
+          {ballroom: false},
+          {conservatory: false},
+          {'dining room': true},
+          {'billiard room': false},
+          {library: false}
+      ]
+  }
+];
+
+let roomsStatus = newDevelopment.map((room) => {
+  return room.rooms;
+})
+let emptyRoom = roomsStatus.filter((el,index) => {
+  
+  console.log(el[index])
+})
+// console.log(emptyRoom);
