@@ -323,13 +323,13 @@ callbackFunc(
 );
 
 //callback practice
-const increment = n => n + 1;
-const decrement = n => n - 1;
-const square = n => n * n;
+const increment = (n) => n + 1;
+const decrement = (n) => n - 1;
+const square = (n) => n * n;
 
 const allCalc = (n, calcType) => {
   return calcType(n);
-}
+};
 
 console.log(allCalc(23, increment));
 console.log(allCalc(23, decrement));
@@ -337,69 +337,47 @@ console.log(allCalc(23, square));
 
 //Reduce - reduce the array and return a single value.
 //syntax - arr.reduce(callback( accumulator, currentValue[, index[, array]] )[, initialValue])
-let thisArray = [2,5,23,12,34];
+let thisArray = [2, 5, 23, 12, 34];
 const reducerFunc = (accumulator, currentValue) => accumulator + currentValue;
 
 const output = thisArray.reduce(reducerFunc, 100); //100 is the initial value in accumulator.
 console.log(output);
 
-//Practice
-const newDevelopment = [
-  {
-      name: 'Miss Scarlet',
-      present: true,
-      rooms: [
-          {kitchen: false},
-          {ballroom: false},
-          {conservatory: true},
-          {'dining room': true},
-          {'billiard room': false},
-          {library: true}
-      ]
-  },
-  {
-      name: 'Reverend Green',
-      present: true,
-      rooms: [
-          {kitchen: true},
-          {ballroom: false},
-          {conservatory: false},
-          {'dining room': false},
-          {'billiard room': true},
-          {library: false}
-      ]
-  },
-  {
-      name: 'Colonel Mustard',
-      present: true,
-      rooms: [
-          {kitchen: false},
-          {ballroom: false},
-          {conservatory: true},
-          {'dining room': false},
-          {'billiard room': true},
-          {library: false}
-      ]
-  },
-  {
-      name: 'Professor Plum',
-      present: true,
-      rooms: [
-          {kitchen: true},
-          {ballroom: false},
-          {conservatory: false},
-          {'dining room': true},
-          {'billiard room': false},
-          {library: false}
-      ]
-  }
-];
+//Currying - it means we can give arguments to a function at different time and once function has all the arguments it will be executed.
 
-let roomsStatus = newDevelopment.map((room) => {
-  return room.rooms;
-})
-let emptyRoom = roomsStatus.filter((el,index) => {
-  
-  console.log(el[index])
-})
-// console.log(emptyRoom);
+//Closure - A closure is the combination of a function bundled together (enclosed) with references to its surrounding state 
+//(the lexical environment). In other words, a closure gives you access to an outer function’s scope from an inner function. 
+//In JavaScript, closures are created every time a function is created, at function creation time.
+
+const closureFunc = function () {
+  let x = "Ayushman"
+  const innerFunc = function () {
+    console.log("Hello " + x);
+  };
+  setTimeout(innerFunc, 3000);
+  console.log("inside closure function")
+};
+//When closureFunc() is called the innerFunc() is defined but not invoked. 
+//setTimeout() will invoke the innerFunc after 3s and closure helps a child function to get the vairable stored in the parent function. 
+
+closureFunc();
+
+//Closure - practice
+const anotherClosure = function() {
+  let x = "Count ";
+  let i = 0;
+  const innerClosure = function() {
+    console.log(x, ++i)
+  }
+  return innerClosure;
+}
+
+const closureOne = anotherClosure();
+const closureTwo = anotherClosure();
+
+closureOne();
+closureOne();
+closureOne();
+closureTwo();
+closureTwo();
+

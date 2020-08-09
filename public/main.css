@@ -1,0 +1,51 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  margin: auto;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(236, 181, 129);
+
+}
+
+li {
+  list-style-type: none;
+  padding: 0.5em;
+  color: #222222;
+  
+}
+
+li:hover {
+  background-color: rgb(236, 167, 102);
+}
+
+li:hover header {
+  color: black
+}
+
+header {
+  font-weight: 800;
+  font-size: 1.5em;
+}
+
+article {
+  font-size: 1em;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.divider {
+  height: 5px;
+  background-color: rgb(236, 167, 102);
+  width: 100%;
+}
