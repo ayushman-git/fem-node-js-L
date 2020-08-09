@@ -14,6 +14,11 @@ app.get("/bianca", function(req, res) {
   res.sendFile(path.join(__dirname, "public/bianca.html"));
 });
 
+app.get("/jen", function(req, res) {
+  res.sendFile(path.join(__dirname, "public/jen.html"));
+});
+
+
 app.use("/public", express.static("./public"));
 
 app.listen(3000);
