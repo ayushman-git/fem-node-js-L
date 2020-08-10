@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Example 1 */
+.ex-1 ul {
+  border: 4px dashed blue;
+  display: flex;
+  /* Tell the main axis of container, by default its row*/
+  flex-direction: column-reverse; 
+}
+
+.ex-1 ul li {
+  border: 2px solid black;
+  list-style-type: none;
+  margin: 0.5em;
+}
+
+/* Example 2 */
+.ex-2 ul {
+  border: 4px dashed rgb(93, 180, 108);
+  display: flex;
+  /* Tell the main axis of container */
+  /* flex-direction: row;  */
+  /* Default value is nowrap --- wrap pushed the content to next line if area is not available*/
+  /* flex-wrap: wrap; */
+  /* Shorthand of direction and wrap */
+  flex-flow: row wrap;
+}
+
+.ex-2 ul li {
+  border: 2px solid black;
+  list-style-type: none;
+  margin: 0.5em;
+
+}
+
+/* Example 3 */
+/* The CSS justify-content property defines how the browser distributes space between and around content items along the main-axis of a flex container */
+.ex-3 ul {
+  border: 4px dashed rgb(219, 67, 67);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  /* align content on cross axis */
+  align-items: center;
+  /* not a good practice */
+  height: 400px;
+}
+
+.ex-3 ul li {
+  border: 2px solid black;
+  list-style-type: none;
+  margin: 0.5em;
+
+}
+
+/* Example 4 */
+.ex-4 ul {
+  border: 4px dashed rgb(219, 67, 67);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+.ex-4 ul li {
+  border: 2px solid black;
+  list-style-type: none;
+  margin: 0.5em;
+}
+
+.ex-4 ul .two {
+  border: 2px solid rgb(188, 55, 214);
+  list-style-type: none;
+  margin: 0.5em;
+  /* order defines where the content will be shown */
+  order: 1;
+}
+
+.ex-4 ul .one {
+  /* order defines where the content will be shown */
+  order: 2;
+}
+
+/* Example 5 */
+.ex-5 ul {
+  border: 4px dashed rgb(67, 120, 219);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+.ex-5 ul li {
+  border: 2px solid black;
+  list-style-type: none;
+  margin: 0.5em;
+}
+
+.ex-5 ul .two {
+  border: 2px solid rgb(177, 42, 42);
+  list-style-type: none;
+  margin: 0.5em;
+  /* use flex-basis in flexbox its results in width but its not fixed it may change as per flex. */
+  /* flex-basis: 40%; */
+  /* flex is shorthand of grow shrink basis */
+  /* default value is 0 1 auto */
+
+  /* flex-grow - It dictates what amount of the available space inside the flex container the item should take up. */
+  /* flex-shrink - This defines the ability for a flex item to shrink if necessary. */
+  flex: 2 1 40%;
+}
